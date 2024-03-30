@@ -1,0 +1,43 @@
+.heros{
+    min-height: 90vh;
+    background: linear-gradient(rgb(0,0,0,0.4),transparent), url("https://i.ytimg.com/vi/nBnzNEdjUOU/maxresdefault.jpg");
+    background-size: cover;
+    /*background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+}
+.consigne {
+    text-align: center;
+    color: white;
+  }
+  
+  .consigne h1 {
+    font-size: 60px; /* Taille importante */
+    margin-top: 0; /* Supprime la marge par défaut du haut */
+    /*font-style: bolt;*/
+}
+.heros p {
+    font-size: 40px;
+    margin-left: 35px;
+}
+.cadre-securite{
+    font-size: 40px;
+    margin-left: 35px;
+}
+.cadre-securite {
+    border: 2px solid #000;
+    padding: 20px;
+    margin: 20px;
+  }
+  button{
+    padding: 1rem 4rem;
+    background: #0a2b19;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: 35px;
+}
+  

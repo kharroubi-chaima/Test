@@ -1,0 +1,84 @@
+/*Globol css */
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+h1{
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 4rem;
+    color: #ffffff;
+}
+h3{
+    font-size: 2.5rem;
+    color: black;
+}
+h4,h5{
+    font-size: 2rem;
+}
+li{
+    font-size: 2rem;
+}
+a{
+    color: #ffffff;
+    text-decoration: none;
+
+
+}
+nav ul{
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none ;
+}
+#logo{
+    flex: 2 1 40rem;
+    color: white;
+}
+.hero{
+    min-height: 90vh;
+    background: linear-gradient(rgb(0,0,0,0.4),transparent), url("https://i.ytimg.com/vi/nBnzNEdjUOU/maxresdefault.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.hero h3{
+padding: 4rem;
+}
+button{
+    padding: 1rem 4rem;
+    background: #0a2b19;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.space {
+    width: 4px;
+    height: auto;
+    display: inline-block;
+  }
+
+
+/*hearder*/
+.main-head{
+    background: #5e7669;
+    color: #ffffff;
+}
+nav{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+}

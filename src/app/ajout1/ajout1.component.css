@@ -1,0 +1,51 @@
+.heros{
+    min-height: 90vh;
+    background: linear-gradient(rgb(0,0,0,0.4),transparent), url("https://i.ytimg.com/vi/nBnzNEdjUOU/maxresdefault.jpg");
+    background-size: cover;
+    /*background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+
+}
+.consigne {
+    text-align: left;
+    color: white;
+    margin-left: 70px;
+    font-size: 40px;
+}
+
+
+  .progress-step {
+    height: 40px;
+    background-color: rgb(43, 104, 43);
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    font-size: 30px;
+}
+.marg input , svg{
+    border: 1;
+    margin-left: 150px;
+}
+.marg1 input{
+    margin-top: 50px;
+    border: 1;
+    margin-left: 250px;
+    transform: scale(2.5);
+}
+button{
+    padding: 1rem 4rem;
+    background: #0a2b19;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: 120px;
+}
+.space {
+    width: 4px;
+    height: auto;
+    display: inline-block;
+  }
+
