@@ -11,38 +11,27 @@
 
 }
 .progress{
-    margin-left: 50px;
-    margin-right: 50px;
+margin-left: 50px;
+margin-right: 50px;
 
 
 }
 .forms{
-    margin-left: 50px;
-    margin-right: 50px;
+margin-left: 50px;
+margin-right: 50px;
+}
+.heros h1 {
+font-size:25px; 
+font-weight: bolder; 
+color: rgb(63, 66, 68);
 }
 .forms p {
     font-size:25px; 
     font-weight: bolder; 
     color: rgb(63, 66, 68);
 }
-.form-group input{
+.form-group{
     color: aliceblue;
     width: 30%;
     font-family: Arial, Helvetica, sans-serif;
 }
-button{
-    color: white;
-    cursor: pointer;
-    
-}
-.btn-secondary{
-    
-    color: white;
-    cursor: pointer;
-    background-color: rgb(124, 122, 123);
-}
-.space {
-    width: 4px;
-    height: auto;
-    display: inline-block;
-  }
