@@ -7,25 +7,25 @@
    
     <form [formGroup]="formulaire" (ngSubmit)="soumettreFormulaire()">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="assureCheck" (change)="toggleFields($event)">
-          <label class="form-check-label" for="assureCheck">Le conducteur est l'assuré</label>
-        </div>
+          <input class="form-check-input" type="checkbox" style="transform: scale(1.5);" id="assureCheck" (change)="toggleFields($event)">
+          <label class="form-check-label" for="assureCheck" >Le conducteur est l'assuré</label>
+        </div><br>
       
         <!-- Champs pour le conducteur -->
         <div class="form-group" id="conducteurFields" [style.display]="conducteurVisible ? 'block' : 'none'">
-          <label for="nomConducteur">Nom du conducteur :</label>
+          <label for="nomConducteur">Nom du conducteur :</label><br>
           <input type="text" class="form-control" id="nomConducteur" formControlName="nomConducteur" required>
-          <label for="prenomConducteur">Prénom du conducteur :</label>
+          <label for="prenomConducteur">Prénom du conducteur :</label><br>
           <input type="text" class="form-control" id="prenomConducteur" formControlName="prenomConducteur" required>
         </div>
       
         <!-- Champs numéro de téléphone et adresse email -->
         <div class="form-group">
-          <label for="telephone" style="width: 30%; color:white; font-size: 20px;">Numéro de téléphone (Tunisie) :</label>
-          <input type="tel" class="form-control" id="telephone" name="telephone" formControlName="telephone" pattern="^\+216\d{8}$" [required]="!conducteurVisible">
+          <label for="telephone">Numéro-de-téléphone(Tunisie):</label>
+          <input type="text" class="form-control" id="telephone" name="telephone" formControlName="telephone" pattern="^\+216\d{8}$" [required]="!conducteurVisible">
           <label for="email">Adresse email :</label>
           <input type="email" class="form-control" id="email" name="email" formControlName="email" [required]="!conducteurVisible">
-        </div>
+        </div><br>
         <div *ngIf="erreurSoumission" class="alert alert-danger" role="alert">
             Veuillez remplir correctement tous les champs du formulaire.
         </div>

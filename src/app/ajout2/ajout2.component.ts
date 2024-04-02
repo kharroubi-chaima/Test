@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Importation de FormBuilder et FormGroup depuis @angular/forms
-import { Router } from '@angular/router'; // Importez Router depuis @angular/router
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout2',
@@ -8,31 +8,42 @@ import { Router } from '@angular/router'; // Importez Router depuis @angular/rou
   styleUrls: ['./ajout2.component.css']
 })
 export class Ajout2Component {
-  formulaire: FormGroup; // Formulaire réactif
-  conducteurVisible: boolean = true; // Initialiser à true pour afficher les champs de conducteur par défaut
-  erreurSoumission: boolean = false; // Déclaration de la propriété erreurSoumission
+  formulaire: FormGroup;
+  conducteurVisible: boolean = true;
+  erreurSoumission: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formulaire = this.formBuilder.group({
       nomConducteur: ['', Validators.required],
       prenomConducteur: ['', Validators.required],
       telephone: ['', [Validators.required, Validators.pattern(/^\+216\d{8}$/)]],
-      email: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)]]
     });
   }
 
   toggleFields(event: Event): void {
-    this.conducteurVisible = !(event.target as HTMLInputElement).checked; // Masquer les champs de conducteur si l'assuré est le conducteur
+    this.conducteurVisible = !(event.target as HTMLInputElement).checked;
   }
 
   soumettreFormulaire(): void {
-    console.log(this.formulaire.valid)
-    if (this.formulaire.valid) {
-      // Le formulaire est valide, rediriger vers Ajout3Component
-      this.router.navigate(['/ajout3']); // Redirection vers le chemin '/ajout3'
-    } else {
-      // Afficher un message d'erreur ou effectuer d'autres actions pour gérer l'erreur de soumission
-      this.erreurSoumission = true; // Activer l'affichage de l'erreur
+
+    if (this.formulaire) {
+      if (!this.conducteurVisible) {
+        if (this.formulaire.get('telephone')?.value && this.formulaire.get('email')?.value) {
+          this.router.navigate(['/ajout3']);
+        } else {
+          this.erreurSoumission = true;
+        }
+      } else {
+        if (this.formulaire.get('nomConducteur')?.value &&
+            this.formulaire.get('prenomConducteur')?.value &&
+            this.formulaire.get('telephone')?.value &&
+            this.formulaire.get('email')?.value) {
+          this.router.navigate(['/ajout3']);
+        } else {
+          this.erreurSoumission = true;
+        }
+      }
     }
   }
 }

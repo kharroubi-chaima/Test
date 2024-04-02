@@ -1,48 +1,52 @@
 <section class="heros"><br>
-  
   <div class="progress" style="height: 30px;" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
     <div class="progress-bar bg-success" style="width: 20%; font-size: 20px;">1ère étape</div>  
   </div>
   <div class="mb-4"></div>
-  <form class="forms">
+  <form class="forms" (ngSubmit)="soumettreFormulaire()" [formGroup]="formulaire">
+    <br>
     <p>Selectionnez le type de véhicule 1 :</p>
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example" style="width: 30%;" id="carSelect">
-      <option value="" disabled selected>choisir le type de voitre voiture </option>
+    <select class="form-select form-select-lg mb-3" aria-label="Large select example" style="width: 30%;" id="carSelect" required [(ngModel)]="typeVehicule" name="typeVehicule">
+      <option value="" disabled selected>choisir le type de voiture</option>
       <option value="1">Voiture</option>
-      <option value="2">Camion </option>
+      <option value="2">Camion</option>
       <option value="3">Deux-roues motorisés</option>
     </select>
-    <p>Saissisez les informations du véhicule 1 :</p>
+    <p>Saisissez les informations du véhicule 1 :</p>
     <div class="form-group">
-      <label for="formGroupExampleInput" style="width: 30%; color:white ; font-size: 20px; ">Assurance</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Assurance" required style="color: black;">
+      <label for="formGroupExampleInput" style="width: 30%; color:white ; font-size: 20px;">Assurance</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Assurance" required formControlName="assurance">
     </div>
     <div class="form-group">
-      <label for="codeImmatriculation" class="form-label" style="width: 30%; color:white ; font-size: 20px; ">Code d'immatriculation (Tunisie)</label>
-      <input type="text" style="color: black;" class="form-control" id="codeImmatriculation" placeholder="Ex: AB123CD" required>
+      <label for="codeImmatriculation" class="form-label" style="width: 30%; color:white ; font-size: 20px;">Code d'immatriculation (Tunisie)</label>
+      <input type="text" style="color: black;" class="form-control" id="codeImmatriculation" placeholder="Ex: AB123CD" required formControlName="codeImmatriculation">
     </div>
     <div class="form-group">
-      <label for="codeImmatriculation" class="form-label" style="width: 30%; color:white ; font-size: 20px; ">Numéro de contrat</label>
-      <input type="text" style="color: black;" class="form-control" id="Numéro-de-contart" placeholder="Numéro de contrat" required>
+      <label for="Numéro-de-contart" class="form-label" style="width: 30%; color:white ; font-size: 20px;">Numéro de contrat</label>
+      <input type="text" style="color: black;" class="form-control" id="Numéro-de-contart" placeholder="Numéro de contrat" required formControlName="numeroContrat">
     </div>
     <br>
     <p>Assuré</p>
     <div class="form-group">
-      <label for="formGroupExampleInput" style="width: 30%; color:white ; font-size: 20px; ">Nom de l'assuré ou raison social</label>
-      <input type="text" class="form-control" id="Nom-Assuré" placeholder="Nom de l'assurancé" required style="color: black;">
+      <label for="Nom-Assuré" style="width: 30%; color:white ; font-size: 20px;">Nom de l'assuré ou raison sociale</label>
+      <input type="text" class="form-control" id="Nom-Assuré" placeholder="Nom de l'assuré" required formControlName="nomAssure">
     </div>
     <div class="form-group">
-      <label for="codeImmatriculation" class="form-label" style="width: 30%; color:white ; font-size: 20px; ">Prénom de l'assuré</label>
-      <input type="text" style="color: black;" class="form-control" id="Prénom-Assuré" placeholder="Prénom de l'assuré" required>
+      <label for="Prénom-Assuré" style="width: 30%; color:white ; font-size: 20px;">Prénom de l'assuré</label>
+      <input type="text" style="color: black;" class="form-control" id="Prénom-Assuré" placeholder="Prénom de l'assuré" required formControlName="prenomAssure">
     </div>
     <div class="form-group">
-      <label for="codeImmatriculation" class="form-label" style="width: 30%; color:white ; font-size: 20px; ">Code postal de l'assuré</label>
-      <input type="text" style="color: black;" class="form-control" id="Code-Postal" placeholder="Code postal de l'assuré" required>
+      <label for="Code-Postal" style="width: 30%; color:white ; font-size: 20px;">Code postal de l'assuré</label>
+      <input type="text" style="color: black;" class="form-control" id="Code-Postal" placeholder="Code postal de l'assuré" required formControlName="codePostalAssure">
     </div>
     <br>
-    
-    <button type="button" class="btn btn-secondary btn-lg">Précedent</button>
+    <div *ngIf="erreurSoumission" class="alert alert-danger" role="alert">
+      Veuillez remplir correctement tous les champs du formulaire.
+    </div>
+  
+    <button type="button" class="btn btn-secondary btn-lg">Précédent</button>
     <div class="space"></div>
-    <button type="button" class="btn btn-primary btn-lg"  routerLink="/ajout2"  >Valider</button>
+    <button type="button" class="btn btn-primary btn-lg" (click)="soumettreFormulaire()">Valider</button>
+  
   </form>
 </section>
